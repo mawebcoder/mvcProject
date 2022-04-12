@@ -2,18 +2,20 @@
 
 namespace App\http\Controllers;
 
-class HomeController
+
+class HomeController extends Controller
 {
 
     public function index()
     {
 
-        echo 'index method in HomeController';
+
+
     }
 
     public function test()
     {
-        echo 'test method in HomeController';
+
 
     }
 }

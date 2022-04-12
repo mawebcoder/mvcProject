@@ -1,10 +1,26 @@
 <?php
 
-use App\bootstrap\Routing;
+use bootstrap\Routing;
+use App\Models\Model;
 
-require_once __DIR__ . '/Routing.php';
+/**
+ * load configs
+ */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../config/app.php';
 
-require_once __DIR__ . '/../app/http/Controllers/Controller.php';
+
+/**
+ * load autoload
+ */
+require_once __DIR__ . '/../vendor/autoload.php';
+
+
+
+
+/**
+ * connect to database
+ */
+$model = new Model();
 
 /**
  * run routing system
@@ -13,4 +29,7 @@ $routing = new Routing();
 
 
 $routing->run();
+
+
+
 

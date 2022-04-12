@@ -39,4 +39,10 @@ class Controller
     {
         return VIEW_BASE_URL . '/' . $view . '.php';
     }
+
+    protected function redirect(string $url)
+    {
+
+         header("Location:" . WEBSITE_DOMAIN  .'/'. trim($url,'/'));
+    }
 }

@@ -1,0 +1,20 @@
+{
+    "name": "mawebcoder/mvcproject",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "bootstrap\\": "bootstrap/"
+        },
+        "files": [
+            "app/helpers/helper.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "mawebcoder",
+            "email": "mawebcoder@gmail.com"
+        }
+    ],
+    "require": {}
+}

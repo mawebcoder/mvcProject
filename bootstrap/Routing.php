@@ -1,6 +1,6 @@
 <?php
 
-namespace App\bootstrap;
+namespace bootstrap;
 
 use App\http\Controllers\Controller;
 use ReflectionMethod;
@@ -26,7 +26,7 @@ class Routing
     {
         $this->validateControllerExists();
 
-        $this->requireController();
+
 
         $controllerNamespace = "App\\http\\Controllers\\" . $this->getControllerName();
 
@@ -55,13 +55,6 @@ class Routing
         return DOCUMENT_ROOT . '/app/http/Controllers/' . $this->getControllerName() . '.php';
     }
 
-
-    private function requireController(): void
-    {
-        $controllerPath = $this->getControllerPath();
-
-        require_once $controllerPath;
-    }
 
     private function getMethodName()
     {
