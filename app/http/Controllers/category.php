@@ -15,31 +15,33 @@ class category extends Controller
     public function index()
     {
 
+        print_r($this->category->all());
 
     }
 
-    public function show()
+    public function show($id)
     {
-
+        print_r($this->category->find(1));
     }
 
-    public function edit()
+
+    public function update($id)
     {
+        $values = ['title' => 'new title 2'];
 
+        $this->category->update($id, $values);
     }
 
-    public function create()
-    {
-
-    }
 
     public function store()
     {
+        $values = ['title' => 'category title'];
 
+        $this->category->insert($values);
     }
 
-    public function delete()
+    public function delete($id)
     {
-
+        $this->category->delete($id);
     }
 }

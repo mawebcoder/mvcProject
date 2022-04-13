@@ -27,6 +27,8 @@ class Model
 
             self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            self::$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
         } catch (PDOException $exception) {
 
             echo $exception->getMessage();
@@ -46,10 +48,10 @@ class Model
             $statement = self::$connection->prepare($query);
 
             if ($values) {
-                $counter = 1;
-                foreach ($values as $value) {
 
-                    $statement->bindValue($counter, $value);
+                foreach ($values as $key => $value) {
+
+                    $statement->bindValue($key + 1, $value);
                 }
             }
 
