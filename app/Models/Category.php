@@ -16,8 +16,8 @@ class Category extends Model
     public function generateTable()
     {
         $query = "create table if not exists categories (
-    id bigint unsigned primary key auto_increment,
-    title varchar (250) not null unique)";
+                        id bigint unsigned primary key auto_increment,
+                        title varchar (250) not null unique)";
 
         self::$connection->exec($query);
     }

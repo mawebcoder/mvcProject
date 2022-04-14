@@ -33,11 +33,24 @@ class category extends Controller
     }
 
 
-    public function store()
+    /**
+     * @return bool|string
+     */
+    public function store(): bool|string
     {
-        $values = ['title' => 'category title'];
+
+        $inputs=json_decode(file_get_contents('php://input'),true);
+
+
+        $values = ['title' => $inputs['title']];
 
         $this->category->insert($values);
+
+
+        return json_encode([
+            'message' => 'success',
+            'status' => 200
+        ]);
     }
 
     public function delete($id)
